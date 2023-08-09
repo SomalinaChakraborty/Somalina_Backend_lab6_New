@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+	<title>Edit Student</title>
+</head>
+<body>
+	<div class="container">
+		<h3>Update Student</h3>
+		<hr>
+		<form action="#" th:action="@{/students/save/{id}(id=${student.studentId})}"
+						 th:object="${student}" method="POST">
+						 
+		 <label>Student First Name</label>
+			<input type="text" th:field="*{studentFirstName}"
+					class="form-control mb-4 col-4" >
+
+			<label>Student Last Name</label>
+			<input type="text" th:field="*{studentLastName}"
+					class="form-control mb-4 col-4">
+
+			<label>Student Course</label>
+			<input type="text" th:field="*{studentCourse}"
+					class="form-control mb-4 col-4">
+					
+			<label>Student Country</label>
+			<input type="text" th:field="*{studentCountry}"
+					class="form-control mb-4 col-4">
+				
+			<button type="submit" class="btn btn-info col-2">Edit</button>
+						
+		</form>
+		<hr>
+		<a th:href="@{/students/list}">Back to Student List</a>
+	</div>
+</body>
+
+</html>
